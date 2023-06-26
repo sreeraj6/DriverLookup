@@ -1,5 +1,6 @@
 package com.example.DriverLookupSystem.Controller;
 
+import com.example.DriverLookupSystem.Dto.LoginRequestDto;
 import com.example.DriverLookupSystem.Dto.SignupRequestDto;
 import com.example.DriverLookupSystem.Dto.SignupResponseDto;
 import com.example.DriverLookupSystem.Service.AuthService;
@@ -21,5 +22,10 @@ public class AuthController {
     @PostMapping("/signup")
     public SignupResponseDto addUser(@RequestBody SignupRequestDto requestDto) {
         return authService.registerUser(requestDto);
+    }
+
+    @PostMapping("/login")
+    public SignupResponseDto loginUser(@RequestBody LoginRequestDto loginRequestDto) {
+        return authService.loginUser(loginRequestDto);
     }
 }

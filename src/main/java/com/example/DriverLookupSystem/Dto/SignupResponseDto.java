@@ -16,10 +16,10 @@ public class SignupResponseDto {
     private UserDataDto data;
     private String token;
 
-    public SignupResponseDto(User user, String token) {
+    public SignupResponseDto(User user,String message, String token) {
         status = HttpStatus.CREATED.value();
         success = true;
-        message = "User Signedup Successfully";
+        this.message = message;
         this.data = new UserDataDto(user.getUid(),user.getName(),user.getUsername());
         this.token = token;
     }
